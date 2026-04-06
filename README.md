@@ -1,1 +1,1 @@
-Prject link on roadmap.sh: https://roadmap.sh/projects/personal-blog
+Project link on roadmap.sh: https://roadmap.sh/projects/personal-blog
