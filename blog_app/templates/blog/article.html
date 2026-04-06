@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ object.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="container">
+
+    <a href="{% url 'home' %}" class="back-link">← Back to Home</a>
+
+    <h1 class="detail-title">{{ object.title }}</h1>
+    <p class="detail-publicher">
+        Publiched by - {{ object.publicher.username }}
+    </p>
+    <p class="detail-date">
+        {{ object.pub_date|date:"F j(D), Y" }}
+    </p>
+
+    <div class="content">
+        {{ object.content|linebreaks }}
+    </div>
+
+</div>
+
+</body>
+</html>

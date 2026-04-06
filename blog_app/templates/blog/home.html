@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <h1 class="site-title">Available Blogs</h1>
+
+    {% for article in object_list %}
+        <div class="article">
+            <a href="{% url 'article' article.id %}">
+                <h3 class="article-title">{{ article.title }}</h3>  
+            </a>
+
+            <p class="article_pub_date">
+                {{ article.pub_date|date:"F d, Y" }}
+            </p>
+        </div>
+    {% empty %}
+        <p>No articles yet.</p>
+    {% endfor %}
+
+</div>
+
+</body>
+</html>
